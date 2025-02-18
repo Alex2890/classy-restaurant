@@ -1,6 +1,43 @@
-@import 'tailwindcss';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* === Noir et Or Global Settings === */
+:root {
+  /* Color Palette */
+  --primary-gold: #d4af37;
+  --secondary-black: #000000;
+  --accent-charcoal: #1c1c1c;
+  --accent-offwhite: #f8f8f8;
+  --text-white: #ffffff;
+  --hover-darkgold: #b8860b;
 
+  /* Font Families */
+  --font-title: "Dancing Script", cursive;
+  --font-body: "Parisienne", cursive;
+  --font-button: "Cormorant Upright", serif;
+}
+
+/* === Apply Global Fonts === */
+body {
+  font-family: var(--font-body);
+  background-color: var(--accent-offwhite);
+  color: var(--secondary-black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--primary-gold);
+}
+
+button {
+  font-family: var(--font-button);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Ensure Links Inherit Color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
