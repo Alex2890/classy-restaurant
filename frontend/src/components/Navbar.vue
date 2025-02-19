@@ -11,18 +11,38 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8">
-          <a href="#" class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]" style="font-family: var(--font-button);">
+          <router-link
+            to="/"
+            class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
+            :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/') }"
+            style="font-family: var(--font-button);"
+          >
             Home
-          </a>
-          <a href="#" class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]" style="font-family: var(--font-button);">
+          </router-link>
+          <router-link
+            to="/menu"
+            class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
+            :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/menu') }"
+            style="font-family: var(--font-button);"
+          >
             Menu
-          </a>
-          <a href="#" class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]" style="font-family: var(--font-button);">
+          </router-link>
+          <router-link
+            to="/reservations"
+            class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
+            :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/reservations') }"
+            style="font-family: var(--font-button);"
+          >
             Reservations
-          </a>
-          <a href="#" class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]" style="font-family: var(--font-button);">
+          </router-link>
+          <router-link
+            to="/contact"
+            class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
+            :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/contact') }"
+            style="font-family: var(--font-button);"
+          >
             Contact
-          </a>
+          </router-link>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -36,28 +56,53 @@
 
     <!-- Mobile Menu (Hidden by Default) -->
     <div v-if="mobileMenuOpen" class="md:hidden absolute top-20 left-0 w-full bg-black text-center py-4 shadow-lg border-t border-[var(--primary-gold)]">
-      <a href="#" class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]" style="font-family: var(--font-button);">
+      <router-link
+        to="/"
+        class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]"
+        :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/') }"
+        style="font-family: var(--font-button);"
+      >
         Home
-      </a>
-      <a href="#" class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]" style="font-family: var(--font-button);">
+      </router-link>
+      <router-link
+        to="/menu"
+        class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]"
+        :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/menu') }"
+        style="font-family: var(--font-button);"
+      >
         Menu
-      </a>
-      <a href="#" class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]" style="font-family: var(--font-button);">
+      </router-link>
+      <router-link
+        to="/reservations"
+        class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]"
+        :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/reservations') }"
+        style="font-family: var(--font-button);"
+      >
         Reservations
-      </a>
-      <a href="#" class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]" style="font-family: var(--font-button);">
+      </router-link>
+      <router-link
+        to="/contact"
+        class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]"
+        :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/contact') }"
+        style="font-family: var(--font-button);"
+      >
         Contact
-      </a>
+      </router-link>
     </div>
   </nav>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { useRoute } from "vue-router";
 
 const mobileMenuOpen = ref(false);
 
 const toggleMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
 };
+
+// Function to determine if the current route is active
+const route = useRoute();
+const isActiveRoute = (path) => route.path === path;
 </script>

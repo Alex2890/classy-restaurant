@@ -1,11 +1,8 @@
 <template>
-  <router-view></router-view>
+  <Navbar />
+  <router-view />
 </template>
 
 <script setup>
-// Any logic or imports go here (e.g., Vue Router, APIs, state)
+import Navbar from "@/components/Navbar.vue";
 </script>
-
-<style scoped>
-/* Optional CSS for this component */
-</style>
