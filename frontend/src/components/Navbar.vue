@@ -14,7 +14,8 @@
           <router-link
             to="/"
             class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
-            :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/') }"
+            active-class="active-link"
+            exact-active-class="active-link"
             style="font-family: var(--font-button);"
           >
             Home
@@ -22,7 +23,8 @@
           <router-link
             to="/menu"
             class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
-            :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/menu') }"
+            active-class="active-link"
+            exact-active-class="active-link"
             style="font-family: var(--font-button);"
           >
             Menu
@@ -30,7 +32,8 @@
           <router-link
             to="/reservations"
             class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
-            :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/reservations') }"
+            active-class="active-link"
+            exact-active-class="active-link"
             style="font-family: var(--font-button);"
           >
             Reservations
@@ -38,7 +41,8 @@
           <router-link
             to="/contact"
             class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
-            :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/contact') }"
+            active-class="active-link"
+            exact-active-class="active-link"
             style="font-family: var(--font-button);"
           >
             Contact
@@ -59,7 +63,8 @@
       <router-link
         to="/"
         class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]"
-        :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/') }"
+        active-class="active-link"
+        exact-active-class="active-link"
         style="font-family: var(--font-button);"
       >
         Home
@@ -67,7 +72,8 @@
       <router-link
         to="/menu"
         class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]"
-        :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/menu') }"
+        active-class="active-link"
+        exact-active-class="active-link"
         style="font-family: var(--font-button);"
       >
         Menu
@@ -75,7 +81,8 @@
       <router-link
         to="/reservations"
         class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]"
-        :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/reservations') }"
+        active-class="active-link"
+        exact-active-class="active-link"
         style="font-family: var(--font-button);"
       >
         Reservations
@@ -83,7 +90,8 @@
       <router-link
         to="/contact"
         class="block py-3 text-lg uppercase tracking-wider transition hover:text-[var(--hover-darkgold)]"
-        :class="{ 'text-[var(--hover-darkgold)] underline': isActiveRoute('/contact') }"
+        active-class="active-link"
+        exact-active-class="active-link"
         style="font-family: var(--font-button);"
       >
         Contact
@@ -94,15 +102,10 @@
 
 <script setup>
 import { ref } from "vue";
-import { useRoute } from "vue-router";
 
 const mobileMenuOpen = ref(false);
 
 const toggleMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
 };
-
-// Function to determine if the current route is active
-const route = useRoute();
-const isActiveRoute = (path) => route.path === path;
 </script>
