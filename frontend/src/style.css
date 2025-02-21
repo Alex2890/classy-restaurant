@@ -5,10 +5,14 @@
   /* Color Palette */
   --primary-gold: #d4af37;
   --secondary-black: #000000;
+  --deep-charcoal: #2C2C2C;
   --accent-charcoal: #1c1c1c;
   --accent-offwhite: #f8f8f8;
   --text-white: #ffffff;
   --hover-darkgold: #b8860b;
+  --soft-gold: #e6d5b8;
+  --light-beige: #f5f5dc;
+  --champagne-gold: #f7e7ce;
 
   /* Font Families */
   --font-title: "Dancing Script", cursive;

@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-black text-[var(--primary-gold)] fixed w-full top-0 z-50 shadow-lg border-b border-[var(--primary-gold)]">
+  <nav class="bg-[var(--deep-charcoal)] text-[var(--primary-gold)] fixed w-full top-0 z-50 shadow-lg border-b border-[var(--primary-gold)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex justify-between items-center h-20">
         <!-- Logo / Brand Name -->
@@ -97,15 +97,43 @@
         Contact
       </router-link>
     </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      v-show="showScrollToTop"
+      @click="scrollToTop"
+      class="fixed bottom-6 left-6 p-3 rounded-full bg-[var(--primary-gold)] text-[var(--secondary-black)] shadow-lg transition-transform transform hover:scale-110 focus:outline-none"
+      style="z-index: 60;"
+      title="Scroll to Top"
+    >
+      <i class="fas fa-arrow-up text-2xl font-bold"></i>
+    </button>
   </nav>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const mobileMenuOpen = ref(false);
+const showScrollToTop = ref(false);
 
 const toggleMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
 };
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+const handleScroll = () => {
+  showScrollToTop.value = window.scrollY > 300;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
