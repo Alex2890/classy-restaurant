@@ -8,14 +8,17 @@
     </button>
   </template>
   
-  <script setup>
-  const handleLogin = () => {
-    console.log("Login button clicked");
-    // Later, this will trigger the sign-in modal or redirect to LoginView.vue
-  };
-  </script>
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
   
-  <style scoped>
+const handleLogin = () => {
+  router.push('/userview');
+};
+</script>
+  
+<style scoped>
   /* Add any additional styling here if needed */
-  </style>
+</style>
   

@@ -38,7 +38,8 @@ const backgroundStyle = `background-image: url('${heroImage}'); background-size:
 
 // Programmatic Navigation to Reservations Page
 const router = useRouter();
+
 const goToReservations = () => {
-router.push('/reservations');
+  router.push('/reservations');
 };
 </script>
