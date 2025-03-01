@@ -9,8 +9,8 @@
           </h1>
         </div>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8">
+        <!-- Desktop Navigation + Login Button -->
+        <div class="hidden md:flex space-x-8 items-center">
           <router-link
             to="/"
             class="text-lg uppercase tracking-wider transition duration-300 hover:text-[var(--hover-darkgold)]"
@@ -47,6 +47,8 @@
           >
             Contact
           </router-link>
+          <!-- Login Button beside Contact Tab -->
+          <LoginButton />
         </div>
 
         <!-- Mobile Menu Button -->
@@ -96,6 +98,10 @@
       >
         Contact
       </router-link>
+      <!-- Login Button in Mobile Menu -->
+      <div class="py-3">
+        <LoginButton />
+      </div>
     </div>
 
     <!-- Scroll to Top Button -->
@@ -113,6 +119,7 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import LoginButton from './LoginButton.vue'; // Importing Login Button Component
 
 const mobileMenuOpen = ref(false);
 const showScrollToTop = ref(false);
